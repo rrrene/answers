@@ -48,25 +48,33 @@ group :assets do
   gem 'therubyracer'
 end
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'rb-fsevent'
+end
+
 group :test, :development do
-  gem 'faker'
-  gem 'spring-commands-rspec'
-  gem 'memcached'
   gem 'dotenv-rails'
-  gem 'rspec-rails', '>= 2.10.1'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'memcached'
+  gem 'pry-nav'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
 end
 
 group :test do
-  gem 'vcr'
-  gem 'shoulda'
   gem 'capybara'
-  gem 'launchy'
-  gem 'guard-rspec'
-  gem 'factory_girl_rails'
-  gem 'spork-rails'
-  gem 'guard-spork'
   gem 'capybara-webkit'
   gem 'database_cleaner'
+  gem 'launchy'
+  gem 'shoulda'
   gem 'simplecov', '~> 0.7.1', require: false
+  gem 'spork-rails'
+  gem 'vcr'
   gem 'webmock'
 end
