@@ -8,6 +8,7 @@
 *.sassc
 **.orig
 .bundle
+.databag_secret
 .env
 .idea
 .powrc
@@ -38,6 +39,7 @@ tags
 /coverage
 /db/*.sqlite3
 /doc/search_stats.csv
+/kitchen/nodes/*.json
 /log/*
 /public/system
 /spec/tmp

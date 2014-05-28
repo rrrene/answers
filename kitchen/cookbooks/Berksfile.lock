@@ -1,0 +1,82 @@
+DEPENDENCIES
+  apt
+  bash-completion
+  cacert
+  cron
+  denyhosts
+  fail2ban
+  git
+  hostname
+  imagemagick
+  logwatch
+  memcached
+  monit
+  nano
+  ntp
+  openssl
+  passenger
+  postgresql
+    git: https://github.com/phlipper/chef-postgresql.git
+    revision: d4d5394f4f6ab3e512742cde07d875e6042d3ab6
+  rvm
+  ssl_certificate
+  sudo
+  ubuntu
+  users_solo
+
+GRAPH
+  apt (2.4.0)
+  bash-completion (0.1.0)
+  build-essential (2.0.2)
+  cacert (0.2.0)
+  chef_gem (0.1.0)
+  chef_handler (1.1.6)
+  cron (1.4.0)
+  denyhosts (0.1.0)
+  dmg (2.2.0)
+  fail2ban (2.1.2)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  git (4.0.2)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    runit (>= 1.0.0)
+    windows (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  hostname (0.3.0)
+    hostsfile (>= 0.0.0)
+  hostsfile (2.4.4)
+  imagemagick (0.2.3)
+  java (1.22.0)
+  logwatch (1.1.0)
+    perl (~> 1.2)
+  memcached (1.7.2)
+    runit (~> 1.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  monit (0.7.1)
+  nano (1.0.0)
+  ntp (1.6.2)
+  openssl (1.1.0)
+  passenger (0.0.1)
+  perl (1.2.2)
+  postgresql (0.14.0)
+    apt (>= 1.9.0)
+  runit (1.5.10)
+    build-essential (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  rvm (0.9.2)
+    chef_gem (>= 0.0.0)
+    java (>= 0.0.0)
+  ssl_certificate (0.1.0)
+  sudo (2.6.0)
+  ubuntu (1.1.6)
+    apt (>= 0.0.0)
+  users_solo (1.0.2)
+  windows (1.31.0)
+    chef_handler (>= 0.0.0)
+  yum (3.2.0)
+  yum-epel (0.3.6)
+    yum (~> 3.0)

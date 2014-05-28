@@ -1,0 +1,20 @@
+{
+  "name": "data_bag_item_users_jgrevich",
+  "json_class": "Chef::DataBagItem",
+  "chef_type": "data_bag_item",
+  "data_bag": "users",
+  "raw_data": {
+    "id": "jgrevich",
+    "uid": "2601",
+    "comment": "Justin Grevich",
+    "groups": [
+      "admin"
+    ],
+    "shell": "/bin/bash",
+    "ssh_keys": [
+      "ssh-rsa AAAAyour_key_here== jgrevich@supercomputer.local",
+      "ssh-rsa AAAAyour_key_here== jgrevich@laptop.local",
+    ],
+    "username": "jgrevich"
+  }
+}

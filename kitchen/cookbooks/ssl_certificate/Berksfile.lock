@@ -1,0 +1,31 @@
+{
+  "sources": {
+    "apt": {
+      "locked_version": "2.0.0"
+    },
+    "yum-epel": {
+      "locked_version": "0.3.4"
+    },
+    "ssl_certificate": {
+      "path": "."
+    },
+    "ssl_certificate_test": {
+      "path": "./test/kitchen/cookbooks/ssl_certificate_test"
+    },
+    "yum": {
+      "locked_version": "3.1.2"
+    },
+    "apache2": {
+      "locked_version": "1.10.2"
+    },
+    "iptables": {
+      "locked_version": "0.12.0"
+    },
+    "logrotate": {
+      "locked_version": "1.5.0"
+    },
+    "pacman": {
+      "locked_version": "1.1.1"
+    }
+  }
+}

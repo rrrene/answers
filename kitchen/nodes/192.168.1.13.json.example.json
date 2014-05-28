@@ -1,0 +1,27 @@
+{
+	"run_list":[ "role[bare_bones]", "role[app_server]", "role[answers]", "role[postgre]" ],
+	"authorization": {
+	    "sudo": {
+	      "groups": ["adm", "wheel"],
+	      "users": ["ubuntu"],
+	      "passwordless": true
+	    }
+	},
+	"ntp": {
+		"apparmor_enabled": false
+	},
+	"postgresql": {
+		"password": {
+			"postgres": ""
+		},
+		"version": "9.3"
+	},
+	"rvm": {
+		"ruby": {
+			"default": true,
+			"version": "2.1.2"
+		},
+		"track_updates": true
+  },
+	"set_fqdn": "hostname.fqdn.tld"
+}
