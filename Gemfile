@@ -37,6 +37,7 @@ gem 'friendly_id', '~> 4.0'
 gem 'gon'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk', '~> 1.3.4'
+gem 'dotenv-rails'
 
 group :assets do
   gem 'sass-rails', '~> 3.2.5'
@@ -48,11 +49,15 @@ group :assets do
   gem 'therubyracer'
 end
 
+group :development do
+  gem 'capistrano', '~> 2.15'
+  gem 'rvm-capistrano'
+end
+
 group :test, :development do
   gem 'faker'
   gem 'spring-commands-rspec'
   gem 'memcached'
-  gem 'dotenv-rails'
   gem 'rspec-rails', '>= 2.10.1'
 end
 

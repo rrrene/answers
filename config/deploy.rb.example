@@ -1,0 +1,31 @@
+default_run_options[:pty] = true
+
+require 'capistrano/ext/multistage'
+require 'bundler/capistrano'
+#require 'new_relic/recipes'
+require 'rvm/capistrano'
+
+set :application, 'answers'
+set :user, :ubuntu
+
+set :default_stage, 'development'
+set :stages, %w(development staging production)
+
+set :repository,  'https://github.com/18F/answers.git'
+set :branch, :dev
+set :deploy_to, "/var/www/#{application}"
+set :deploy_via, :remote_cache
+set :copy_exclude, [ '.ruby-gemset', '.ruby-version' ]
+set :ssh_options, { :forward_agent => true }
+set :default_shell, '/bin/bash -l'
+set :use_sudo, true
+set :rvm_ruby_string, '1.9.3'
+set :rvm_type, :system
+set :keep_releases, 6
+set :scm, :git
+
+load 'config/deploy/base'
+
+before 'deploy:update', 'deploy:chown'
+after 'deploy:update', 'deploy:symlink_configs'
+after 'deploy:setup', 'deploy:add_shared_config'

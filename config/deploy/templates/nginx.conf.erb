@@ -1,0 +1,28 @@
+server {
+  listen                              <%= "#{ip}:80;" %>
+  rewrite (.*)                        https://$http_host$1 permanent;
+}
+server {
+  listen                              <%= "#{ip}:443;" %>
+  server_name                         <%= "#{current_server.host};" %>
+  root                                <%= "#{current_path}/public;" %>
+  passenger_ruby                      /usr/local/rvm/wrappers/ruby-1.9.3-p547/ruby;
+
+  passenger_enabled                   on;
+  passenger_min_instances             4;
+  passenger_set_cgi_param             HTTP_X_FORWARDED_PROTO https;
+  passenger_set_cgi_param             HTTP_X_REQUEST_START "t=${msec}";
+
+  ssl                                 on;
+  ssl_certificate                     /etc/ssl/certs/ssl-cert-snakeoil.pem;
+  ssl_certificate_key                 /etc/ssl/private/ssl-cert-snakeoil.key;
+  ssl_ciphers                         HIGH:!aNULL:!MD5;
+  ssl_prefer_server_ciphers           on;
+  ssl_protocols                       SSLv2 SSLv3 TLSv1;
+  ssl_session_timeout                 5m;
+  
+  error_page 500 502 503 504          /50x.html;
+  location = /50x.html {
+      root   html;
+  }
+}
