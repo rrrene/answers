@@ -6,6 +6,7 @@ describe Article do
   subject       { article }
 
   describe ".search" do
+
     it "matches articles in the database" do
       Article.search(article.title).should include(article)
     end
@@ -17,7 +18,7 @@ describe Article do
       end
     end
 
-    context "query is the empty string" do
+    context "query is an empty string" do
       subject { Article.search ''}
       it { should == Article.all }
     end
@@ -45,4 +46,18 @@ describe Article do
       Article.remove_stop_words('why am I a banana').should eq('banana')
     end
   end
+
+  describe ".find_by_type" do
+    it 'returns articles matching type' do
+      new_article = Article.create(
+          :title => "Every answer you've ever been searching for and a bag of cats",
+          :type => 'QuickAnswer'
+        )
+      result = Article.find_by_type( "QuickAnswer" )
+      expect(result.map{|r| r.title }).to include "Every answer you've ever been searching for and a bag of cats"
+    end
+
+
+  end
 end
+
