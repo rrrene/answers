@@ -50,6 +50,7 @@ end
 
 group :development do
   gem 'berkshelf'
+  gem 'knife-ec2'
   gem 'knife-solo', github: 'matschaffer/knife-solo', submodules: true
   gem 'knife-solo_data_bag'
 end
