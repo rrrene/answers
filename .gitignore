@@ -39,6 +39,7 @@ tags
 /coverage
 /db/*.sqlite3
 /doc/search_stats.csv
+/kitchen/cookbooks
 /kitchen/nodes/*.json
 /log/*
 /public/system
